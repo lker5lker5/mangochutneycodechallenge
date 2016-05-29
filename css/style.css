@@ -6,7 +6,8 @@ html, body {
   background-color: #FA4043;
   height: 100px;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 15px; }
   .timeline p {
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -17,5 +18,34 @@ html, body {
   background-color: white;
   width: 100%;
   text-align: center; }
+  .post-header, .post-body {
+    padding: 25px;
+    width: 100%; }
+  .post-header > table tr:nth-child(1) > td:nth-child(1) {
+    background-color: #FA4043;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 36px; }
+  .post-header > table tr:nth-child(1) > td:nth-child(2), .post-header > table tr:nth-child(2) > td:nth-child(1) {
+    padding-left: 15px;
+    text-align: left; }
+  .post-header > table tr:nth-child(2) > td:nth-child(2) {
+    padding-right: 15px;
+    text-align: right; }
+  .post-header > table tr:nth-child(1) > td:nth-child(2) {
+    font-size: 16px;
+    color: #002134;
+    vertical-align: middle; }
+  .post-header > table tr:nth-child(2) {
+    font-size: 14px;
+    color: #768b9c;
+    vertical-align: middle; }
+  @media screen and (max-width: 768px) {
+    .post-header > table {
+      border: none !important; } }
 
 /*# sourceMappingURL=style.css.map */

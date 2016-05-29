@@ -1,12 +1,14 @@
 import React from 'react';
-import Header from './header';
-import Post from './post';
+import Header from './Header';
+import Post from './Post';
 
 var $ = require('jquery');
 
 export default React.createClass({
     getInitialState: function () {
-        return {records:[]};
+        return {
+            records:[]
+        };
     },
     add2State: function (record) {
         var arr = this.state.records;
@@ -23,22 +25,27 @@ export default React.createClass({
         this.uniqueId = this.uniqueId || 0;
         return this.uniqueId++;
     },
+    eachPost: function (post, i) {
+        <Post key={post.id} index={i}>
+            {post.text}
+        </Post>
+    },
     componentWillMount: function() {
         var self = this;
         $.getJSON("https://relish.digital/foxp2/timeline.json", 
             function (results) {
-                console.log(results);
+                results.forEach(function (result) {
+                    self.add2State(result);
+                });
             }
         );
     },
     render: function() {
         return (
-            <div className="container-fluid">
+            <section className="container-fluid">
                 <Header>Timeline</Header>
-                <div className="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 post">
-                    <Post />
-                </div>
-            </div>
+                <Post>{this.state.records}</Post>
+            </section>
         );
     }
 });

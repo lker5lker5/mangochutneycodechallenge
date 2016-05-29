@@ -1,0 +1,81 @@
+$primary-red: #FA4043;
+$board-bg: #F4F8FB;
+$post-padding: 25px;
+
+html,body {
+  width: 100%;
+  background-color: $board-bg !important;
+}
+
+.timeline {
+  background-color: $primary-red;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+
+  p {
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    line-height: 100px;
+  }
+}
+
+.post {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+
+  &-header, &-body {
+    padding: $post-padding;
+    width: 100%;
+  }
+
+  // post-header styling
+  &-header > table tr:nth-child(1) > td:nth-child(1) {
+    background-color: $primary-red;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 36px;
+  }
+
+  &-header > table tr:nth-child(1) > td:nth-child(2),
+  &-header > table tr:nth-child(2) > td:nth-child(1)
+  {
+    padding-left: 15px;
+    text-align: left;
+  }
+
+  &-header > table tr:nth-child(2) > td:nth-child(2) {
+    padding-right: 15px;
+    text-align: right;
+  }
+
+  &-header > table tr:nth-child(1) > td:nth-child(2) {
+    font-size: 16px;
+    color: #002134;
+    vertical-align: middle;
+  }
+
+  &-header > table tr:nth-child(2) {
+    font-size: 14px;
+    color: #768b9c;
+    vertical-align: middle;
+  }
+
+  @media screen and (max-width: 768px) {
+    &-header > table {
+      border: none !important;
+    }
+  }
+
+  // post-body styling
+  &-body {
+
+  }
+}
