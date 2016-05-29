@@ -44,7 +44,7 @@ export default React.createClass({
         return (
             <section className="container-fluid">
                 <Header>Timeline</Header>
-                <Post>{this.state.records}</Post>
+                <Post>{this.state.records.map(this.eachPost)}</Post>
             </section>
         );
     }
