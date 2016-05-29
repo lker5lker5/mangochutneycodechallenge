@@ -1,6 +1,6 @@
 $primary-red: #FA4043;
 $board-bg: #F4F8FB;
-$post-padding: 25px;
+$gap: 25px;
 
 html,body {
   width: 100%;
@@ -12,6 +12,7 @@ html,body {
   height: 100px;
   width: 100%;
   text-align: center;
+  margin-bottom: $gap;
 
   p {
     color: white;
@@ -25,22 +26,37 @@ html,body {
   background-color: white;
   width: 100%;
   text-align: center;
+  margin-bottom: $gap;
 
   &-header, &-body {
-    padding: $post-padding $post-padding 0;
+    padding: $gap $gap 0;
     width: 100%;
   }
 
   // post-header styling
+  &-header > table {
+    margin-bottom: 0 !important;
+  }
+  &-header > table > tbody > tr > td{
+    border-top: none !important;
+  }
   &-header > table tr:nth-child(1) > td:nth-child(1) {
+    //background-color: $primary-red;
+    //color: white;
+    width: 55px !important;
+    height: 55px !important;
+    //border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 36px;
+  }
+
+  div.circle {
     background-color: $primary-red;
     color: white;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 36px;
   }
 
   &-header > table tr:nth-child(1) > td:nth-child(2),
@@ -78,10 +94,13 @@ html,body {
 
     div {
       width: 100%;
-      height: 355px;
+      max-height: 355px;
       border-radius: 5px;
-      background: url("https://relish.digital/foxp2/papyrus.png");
-      background-size: cover;
+      overflow: hidden;
+    }
+
+    div img {
+      width: 100%;
     }
 
     p {
@@ -90,6 +109,20 @@ html,body {
       line-height: 20px;
       text-align: left;
       color: #586d7e;
+    }
+  }
+
+  &:hover {
+    background-color: $primary-red;
+    p, b, i {
+      color: white;
+    }
+
+    .circle {
+      background-color: white;
+      b {
+        color: $primary-red;
+      }
     }
   }
 }

@@ -26,9 +26,9 @@ export default React.createClass({
         return this.uniqueId++;
     },
     eachPost: function (post, i) {
-        <Post key={post.id} index={i}>
-            {post.text}
-        </Post>
+        return (
+            <Post key={post.id} index={i}>{post}</Post>
+        );
     },
     componentWillMount: function() {
         var self = this;
@@ -44,7 +44,7 @@ export default React.createClass({
         return (
             <section className="container-fluid">
                 <Header>Timeline</Header>
-                <Post>{this.state.records.map(this.eachPost)}</Post>
+                {this.state.records.map(this.eachPost)}
             </section>
         );
     }

@@ -7,8 +7,8 @@ export default React.createClass({
        return (
             <section className="row">
                 <div className="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 post">
-                    <PostHeader />
-                    <PostBody />
+                    <PostHeader>{this.props.children}</PostHeader>
+                    <PostBody>{this.props.children}</PostBody>
                 </div>
             </section>
         ); 

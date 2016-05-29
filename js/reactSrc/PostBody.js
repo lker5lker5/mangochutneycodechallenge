@@ -1,11 +1,23 @@
 import React from 'react';
 
 export default React.createClass({
+    getInitialState: function () {
+        return {display: "block"};
+    },
+    componentWillMount: function () {
+        if (this.props.children.image) {
+            this.setState({display:"block"});
+        }else {
+            this.setState({display:"none"});
+        }
+    },
     render: function() {
         return (
             <div className="post-body">
-                <div></div>
-                <p>Knowing the mouse might one day leave its hole and get the cheese... It fills you with determination.</p>
+                <div style={this.state}>
+                    <img src={this.props.children.image} />
+                </div>
+                <p>{this.props.children.text}</p>
             </div>
         );
     }
