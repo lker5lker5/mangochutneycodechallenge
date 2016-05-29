@@ -1,0 +1,21 @@
+html, body {
+  width: 100%;
+  background-color: #F4F8FB !important; }
+
+.timeline {
+  background-color: #FA4043;
+  height: 100px;
+  width: 100%;
+  text-align: center; }
+  .timeline p {
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    line-height: 100px; }
+
+.post {
+  background-color: white;
+  width: 100%;
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
