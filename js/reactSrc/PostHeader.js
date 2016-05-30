@@ -25,7 +25,8 @@ export default React.createClass({
         return day + " " + monthes[monthIndex];
     },
     getPostId: function () {
-        return "#" + (this.props.children.id + 1);
+        console.log(this.props.children.id);
+        return "#" + (this.props.children.id);
     },
     render: function() {
         return (

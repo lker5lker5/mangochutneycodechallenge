@@ -7,13 +7,16 @@ html,body {
   background-color: $board-bg !important;
 }
 
+#container-fluid {
+  position: relative;
+}
+
 .timeline {
   background-color: $primary-red;
   height: 100px;
   width: 100%;
   text-align: center;
   margin-bottom: $gap;
-  position: relative;
 
   p {
     color: white;
@@ -21,14 +24,9 @@ html,body {
     font-size: 2em;
     line-height: 100px;
   }
-
-  select {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    width: 20%;
-  }
 }
+
+
 
 .post {
   background-color: white;
@@ -149,4 +147,12 @@ a#toTop {
   border: none;
   text-indent: 100%;
   background: url('../../img/top-arrow.png') no-repeat;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
 }
