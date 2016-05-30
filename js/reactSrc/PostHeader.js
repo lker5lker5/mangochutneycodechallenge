@@ -24,6 +24,9 @@ export default React.createClass({
         var monthIndex = parseInt(date.split("-")[1]) - 1;
         return day + " " + monthes[monthIndex];
     },
+    getPostId: function () {
+        return "#" + (this.props.children.id + 1);
+    },
     render: function() {
         return (
             <div className="post-header">
@@ -38,12 +41,15 @@ export default React.createClass({
                             <td>
                                 <b>{this.props.children.name}</b>
                             </td>
+                            <td>
+                                {this.getPostId()}
+                            </td>
                         </tr>
                         <tr>
                             <td><b>has left a message...</b></td>
                             <td>
                                 <i className="fa fa-clock-o fa-fw" aria-hidden="true"></i>
-                                &nbsp; <p>{this.getTimeStamp()}</p>
+                                &nbsp; {this.getTimeStamp()}
                             </td>
                         </tr>
                         </tbody>

@@ -7,7 +7,7 @@ var $ = require('jquery');
 export default React.createClass({
     getInitialState: function () {
         return {
-            records:[]
+            records:[],
         };
     },
     add2State: function (record) {
@@ -19,7 +19,7 @@ export default React.createClass({
             text: record.text,
             image: record.image
         });
-        this.setState({notes: arr});
+        this.setState({records: arr});
     },
     nextId: function () {
         this.uniqueId = this.uniqueId || 0;
@@ -43,7 +43,7 @@ export default React.createClass({
     render: function() {
         return (
             <section className="container-fluid">
-                <Header>Timeline</Header>
+                <Header changeNum={this.props.changeNum}>Timeline</Header>
                 {this.state.records.map(this.eachPost)}
             </section>
         );
